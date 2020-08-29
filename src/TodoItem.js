@@ -24,15 +24,6 @@ class TodoItem extends Component {
       };
     });
   }
-  //   componentDidUpdate(prevProps) {
-  //     // if (prevProps.id != this.state.id) {
-  //     //   this.setState({
-  //     //     todoText: this.props.text,
-  //     //     id: this.props.id,
-  //     //   });
-  //     // }
-  //     console.log("inside items");
-  //   }
   componentDidMount() {
     this.setState({
       todoText: this.props.text,
