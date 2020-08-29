@@ -13,8 +13,10 @@ class TodoItem extends Component {
       completed: false,
       todoText: "Some random text",
       id: "-1",
+      renderItem: "true",
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
   handleChange() {
     this.setState((prevState) => {
@@ -22,6 +24,11 @@ class TodoItem extends Component {
         ...prevState,
         completed: prevState.completed ? false : true,
       };
+    });
+  }
+  handleClick() {
+    this.setState({
+      renderItem: false,
     });
   }
   componentDidMount() {
@@ -32,19 +39,23 @@ class TodoItem extends Component {
     console.log("inside");
   }
   render() {
-    return (
-      <div>
-        <label style={this.state.completed ? completedStyle : null}>
-          <input
-            type="checkbox"
-            onChange={this.handleChange}
-            checked={this.state.completed}
-          />
-          {this.state.todoText}
-        </label>
-        <input type="button" value="X" />
-      </div>
-    );
+    if (this.state.renderItem) {
+      return (
+        <div>
+          <label style={this.state.completed ? completedStyle : null}>
+            <input
+              type="checkbox"
+              onChange={this.handleChange}
+              checked={this.state.completed}
+            />
+            {this.state.todoText}
+          </label>
+          <input type="button" value="X" onClick={this.handleClick} />
+        </div>
+      );
+    } else {
+      return null;
+    }
   }
 }
 
