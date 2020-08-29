@@ -4,10 +4,28 @@ class TodoItemList extends Component {
   constructor() {
     super();
     this.state = {
-      todoItemArray: [<TodoItem />, <TodoItem />],
+      todoItemArray: [],
     };
   }
-
+  componentDidUpdate(prevProps) {
+    if (prevProps != this.props) {
+      //   console.log("inside ");
+      this.setState((prevState) => {
+        return {
+          ...prevState,
+          todoItemArray: [
+            ...prevState.todoItemArray,
+            <TodoItem
+              text={this.props.text}
+              key={this.props.id}
+              id={this.props.id}
+            />,
+          ],
+        };
+      });
+    }
+    // console.log(prevProps);
+  }
   render() {
     return <div>{this.state.todoItemArray}</div>;
   }
