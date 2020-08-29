@@ -12,7 +12,7 @@ class TodoItem extends Component {
     this.state = {
       completed: false,
       todoText: "Some random text",
-      id: "",
+      id: "-1",
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -23,6 +23,22 @@ class TodoItem extends Component {
         completed: prevState.completed ? false : true,
       };
     });
+  }
+  //   componentDidUpdate(prevProps) {
+  //     // if (prevProps.id != this.state.id) {
+  //     //   this.setState({
+  //     //     todoText: this.props.text,
+  //     //     id: this.props.id,
+  //     //   });
+  //     // }
+  //     console.log("inside items");
+  //   }
+  componentDidMount() {
+    this.setState({
+      todoText: this.props.text,
+      id: this.props.id,
+    });
+    console.log("inside");
   }
   render() {
     return (
