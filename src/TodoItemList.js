@@ -8,7 +8,7 @@ class TodoItemList extends Component {
     };
   }
   componentDidUpdate(prevProps) {
-    if (prevProps != this.props) {
+    if (prevProps !== this.props) {
       //   console.log("inside ");
       this.setState((prevState) => {
         return {

@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./css/TodoAdd.css";
 class TodoAdd extends React.Component {
   constructor() {
     super();
@@ -40,6 +40,7 @@ class TodoAdd extends React.Component {
           onChange={this.handleChange}
           value={this.state.todoItemToAdd}
           onKeyDown={this.handleClick}
+          className="inputText"
         />
       </div>
     );
