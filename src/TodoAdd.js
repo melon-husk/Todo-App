@@ -5,7 +5,7 @@ class TodoAdd extends React.Component {
     super();
     this.state = {
       todoItemToAdd: "",
-      id: 1,
+      id: 0,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -18,7 +18,7 @@ class TodoAdd extends React.Component {
   }
   handleClick(event) {
     const key = event.key;
-    console.log(key);
+    // console.log(key);
     if (key === "Enter") {
       if (this.state.todoItemToAdd) {
         this.props.itemToAdd(this.state);
