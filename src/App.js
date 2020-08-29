@@ -8,21 +8,23 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      todoItemArray: [],
+      itemText: "",
+      itemId: "",
     };
     this.itemToAdd = this.itemToAdd.bind(this);
   }
   itemToAdd(data) {
-    this.setState((prevState) => ({
-      todoItemArray: [...prevState.todoItemArray, data],
-    }));
-    console.log(this.state.todoItemArray);
+    this.setState({
+      itemText: data.todoItemToAdd,
+      itemId: data.id,
+    });
+    // console.log(this.state);
   }
   render() {
     return (
       <div>
         <TodoAdd itemToAdd={this.itemToAdd} />
-        <TodoItemList />
+        <TodoItemList text={this.state.itemText} id={this.state.itemId} />
       </div>
     );
   }
