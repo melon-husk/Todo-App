@@ -41,6 +41,7 @@ class TodoAdd extends React.Component {
           value={this.state.todoItemToAdd}
           onKeyDown={this.handleClick}
           className="inputText"
+          placeholder="Enter things you want to do"
         />
       </div>
     );

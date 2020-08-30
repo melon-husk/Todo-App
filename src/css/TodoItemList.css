@@ -1,0 +1,16 @@
+.listDiv {
+  /* border: 4px solid black; */
+  /* font-size: 5em; */
+  border-radius: 20px;
+  padding: 0px 10px 10px 10px;
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+  width: 80%;
+  background: white;
+  text-align: left;
+  color: #00334e;
+  font-size: 3vh;
+  min-height: 10vh;
+}

@@ -1,11 +1,6 @@
 import React, { Component } from "react";
-
-const completedStyle = {
-  fontStyle: "italic",
-  color: "#cdcdcd",
-  textDecoration: "line-through",
-};
-
+import "./css/TodoItem.css";
+import { ReactComponent as X } from "./css/x.svg";
 class TodoItem extends Component {
   constructor() {
     super();
@@ -41,8 +36,10 @@ class TodoItem extends Component {
   render() {
     if (this.state.renderItem) {
       return (
-        <div>
-          <label style={this.state.completed ? completedStyle : null}>
+        <div className="itemDiv">
+          <label
+            className={this.state.completed ? "completed" : "notCompleted "}
+          >
             <input
               type="checkbox"
               onChange={this.handleChange}
@@ -50,7 +47,8 @@ class TodoItem extends Component {
             />
             {this.state.todoText}
           </label>
-          <input type="button" value="X" onClick={this.handleClick} />
+          {/* <input type="button" value="X" onClick={this.handleClick} /> */}
+          <X onClick={this.handleClick} className="svg-icon svg-baseline" />
         </div>
       );
     } else {

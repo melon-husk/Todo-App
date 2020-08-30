@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import TodoItem from "./TodoItem";
+import "./css/TodoItemList.css";
 class TodoItemList extends Component {
   constructor() {
     super();
@@ -27,7 +28,7 @@ class TodoItemList extends Component {
     // console.log(prevProps);
   }
   render() {
-    return <div>{this.state.todoItemArray}</div>;
+    return <div className="listDiv">{this.state.todoItemArray}</div>;
   }
 }
 

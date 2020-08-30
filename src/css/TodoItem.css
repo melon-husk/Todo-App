@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap");
+.completed {
+  font-style: italic;
+  text-decoration: line-through;
+  color: #cdcdcd;
+  margin-bottom: 5px;
+  font-size: 1.5em;
+}
+.notCompleted {
+  margin-bottom: 5px;
+  font-size: 1.5em;
+}
+/* .itemDiv {
+} */
+.svg-icon {
+  display: inline-flex;
+  align-self: center;
+}
+.svg-icon {
+  height: 1.8em;
+  width: 1.8em;
+}
+.svg-icon.svg-baseline {
+  top: 0.4em;
+  position: relative;
+}
+input[type="checkbox"] {
+  height: 1.8em;
+  width: 1.8em;
+  margin-right: 5px;
+  top: 0.1em;
+  position: relative;
+}
+input[type="checkbox"]:checked {
+  background: #abd;
+}
